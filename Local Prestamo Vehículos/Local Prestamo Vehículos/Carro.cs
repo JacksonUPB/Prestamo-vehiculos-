@@ -1,0 +1,27 @@
+﻿using System;
+
+namespace Local_Prestamo_Vehículos
+{
+    public class Carro : Vehiculo
+    {
+        public int Asientos { get; set; }
+
+        public Carro(string placa, string marca, int modelo, bool disponible, int asientos, bool buenEstado)
+            : base(placa, marca, modelo, disponible, buenEstado)
+        {
+            Asientos = asientos;
+        }
+
+        public override void Prestar()
+        {
+            Disponible = false; 
+            Console.WriteLine($"El carro {Placa} ha sido prestado.");
+        }
+
+        public override void Devolver()
+        {
+            Disponible = true;
+            Console.WriteLine($"El carro {Placa} ha sido devuelto.");
+        }
+    }
+}

@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace PrestamoVehiculos
+
+
+
+    // Aunque no diste los detalles de la clase Mecánico, es necesaria por el requerimiento de arreglo.
+    
+    /// <summary>
+    ///  Ejemplo base de las interfaces de usuario (UI) solicitadas.
+    ///  Aquí se deberían incluir los menú de crud (crear, modificar, listar, eliminar).
+    /// </summary>
+    public class UICliente
+    {
+        public void MostrarMenu(List<Cliente> clientes)
+        {
+            Console.WriteLine("-- Gestionar Clientes --");
+            // Aquí puedes implementar el Consola.ReadLine() y demás para el CRUD
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Configuramos una tienda de prueba
+            Tienda miTienda = new Tienda { Abierta = true };
+            miTienda.ListaMecanicos.Add(new Mecanico("Carlos")); // Añadimos un mecánico
+
+            // Usamos un vehículo que está inicialmente en MAL ESTADO
+            Carro carro = new Carro("XYZ-888", "Mazda", 2021, true, 4, false);
+            miTienda.ListaVehiculos.Add(carro);
+
+            Cliente clienteRechazado = new Cliente(1, "Ana", false, 16); // Sin licencia y menor
+            Cliente clienteValido = new Cliente(2, "Luis", true, 25);    // Con licencia y mayor
+
+            Console.WriteLine("--- Prueba 1: Cliente denegado ---");
+            miTienda.PrestarVehiculo(carro, clienteRechazado, DateTime.Now);
+
+            Console.WriteLine("\n--- Prueba 2: Cliente válido y vehículo requiere reparación ---");
+            miTienda.PrestarVehiculo(carro, clienteValido, DateTime.Now);
+
+            Console.WriteLine("\n--- Prueba 3: Devolviendo el vehículo ---");
+            miTienda.RecibirVehiculo(clienteValido, carro, DateTime.Now);
+        }
+    }
+}

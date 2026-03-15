@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\maico\\Documents\\Taller Poo Maicol Gutierrez\\Local Prestamo Veh\u00EDculos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D86EA5-77CA-E066-3B75-439FA4413ACE}|Interfaz de Usuario\\Interfaz de Usuario.csproj|c:\\users\\maico\\documents\\taller poo maicol gutierrez\\local prestamo veh\u00EDculos\\interfaz de usuario\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D86EA5-77CA-E066-3B75-439FA4413ACE}|Interfaz de Usuario\\Interfaz de Usuario.csproj|solutionrelative:interfaz de usuario\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAE63E75-55C6-33BD-52FA-DFE7619F28FD}|Local Prestamo Veh\u00EDculos\\Local Prestamo Veh\u00EDculos.csproj|c:\\users\\maico\\documents\\taller poo maicol gutierrez\\local prestamo veh\u00EDculos\\local prestamo veh\u00EDculos\\carro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAE63E75-55C6-33BD-52FA-DFE7619F28FD}|Local Prestamo Veh\u00EDculos\\Local Prestamo Veh\u00EDculos.csproj|solutionrelative:local prestamo veh\u00EDculos\\carro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\maico\\Documents\\Taller Poo Maicol Gutierrez\\Local Prestamo Veh\u00EDculos\\Interfaz de Usuario\\Program.cs",
+              "RelativeDocumentMoniker": "Interfaz de Usuario\\Program.cs",
+              "ToolTip": "C:\\Users\\maico\\Documents\\Taller Poo Maicol Gutierrez\\Local Prestamo Veh\u00EDculos\\Interfaz de Usuario\\Program.cs",
+              "RelativeToolTip": "Interfaz de Usuario\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T17:15:31.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Carro.cs",
+              "DocumentMoniker": "C:\\Users\\maico\\Documents\\Taller Poo Maicol Gutierrez\\Local Prestamo Veh\u00EDculos\\Local Prestamo Veh\u00EDculos\\Carro.cs",
+              "RelativeDocumentMoniker": "Local Prestamo Veh\u00EDculos\\Carro.cs",
+              "ToolTip": "C:\\Users\\maico\\Documents\\Taller Poo Maicol Gutierrez\\Local Prestamo Veh\u00EDculos\\Local Prestamo Veh\u00EDculos\\Carro.cs",
+              "RelativeToolTip": "Local Prestamo Veh\u00EDculos\\Carro.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T16:39:47.882Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

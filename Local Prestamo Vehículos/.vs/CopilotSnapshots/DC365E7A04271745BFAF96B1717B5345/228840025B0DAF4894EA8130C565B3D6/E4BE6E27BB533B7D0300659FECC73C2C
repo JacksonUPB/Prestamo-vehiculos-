@@ -1,0 +1,62 @@
+﻿using System;
+
+namespace Local_Prestamo_Vehículos
+{
+    public class UITienda
+    {
+        private Tienda _tienda;
+        private UICliente _uiCliente;
+        private UIVehiculo _uiVehiculo;
+        private UIMecanico _uiMecanico;
+        private UIPrestamo _uiPrestamo;
+
+        public UITienda(Tienda tienda)
+        {
+            _tienda = tienda;
+            _uiCliente = new UICliente(_tienda.ListaClientes); // Espera, tienda no tiene ListaClientes definido explícitamente en el requirimiento original, pero los clientes se necesitan guardar en algún lado. Revisaré Tienda.
+            _uiVehiculo = new UIVehiculo(_tienda.ListaVehiculos);
+            _uiMecanico = new UIMecanico(_tienda.ListaMecanicos);
+            _uiPrestamo = new UIPrestamo(_tienda);
+        }
+
+        public void MostrarMenu()
+        {
+            int opcion;
+            do
+            {
+                Console.WriteLine("\n=== Menú Principal Tienda ===");
+                Console.WriteLine("1. Gestionar Clientes");
+                Console.WriteLine("2. Gestionar Vehículos");
+                Console.WriteLine("3. Gestionar Mecánicos");
+                Console.WriteLine("4. Gestionar Préstamos");
+                Console.WriteLine("5. Salir");
+                Console.Write("Seleccione una opción: ");
+                
+                if (!int.TryParse(Console.ReadLine(), out opcion)) opcion = 0;
+
+                switch (opcion)
+                {
+                    case 1:
+                        _uiCliente.MostrarMenu();
+                        break;
+                    case 2:
+                        _uiVehiculo.MostrarMenu();
+                        break;
+                    case 3:
+                        _uiMecanico.MostrarMenu();
+                        break;
+                    case 4:
+                        _uiPrestamo.MostrarMenu();
+                        break;
+                    case 5:
+                        Console.WriteLine("Saliendo del sistema...");
+                        break;
+                    default:
+                        Console.WriteLine("Opción no válida.");
+                        break;
+                }
+            }
+            while (opcion != 5);
+        }
+    }
+}

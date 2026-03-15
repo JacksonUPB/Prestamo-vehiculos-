@@ -1,0 +1,15 @@
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\obj\Debug\net10.0\Local Prestamo Vehículos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\obj\Debug\net10.0\Local Prestamo Vehículos.AssemblyInfoInputs.cache
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\obj\Debug\net10.0\Local Prestamo Vehículos.AssemblyInfo.cs
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\obj\Debug\net10.0\Local Prestamo Vehículos.csproj.CoreCompileInputs.cache
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\obj\Debug\net10.0\Local Prestamo Vehículos.sourcelink.json
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\bin\Debug\net10.0\Local Prestamo Vehículos.exe
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\bin\Debug\net10.0\Local Prestamo Vehículos.deps.json
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\bin\Debug\net10.0\Local Prestamo Vehículos.runtimeconfig.json
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\bin\Debug\net10.0\Local Prestamo Vehículos.dll
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\bin\Debug\net10.0\Local Prestamo Vehículos.pdb
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\obj\Debug\net10.0\Local Prestamo Vehículos.dll
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\obj\Debug\net10.0\refint\Local Prestamo Vehículos.dll
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\obj\Debug\net10.0\Local Prestamo Vehículos.pdb
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\obj\Debug\net10.0\Local Prestamo Vehículos.genruntimeconfig.cache
+C:\Users\maico\Documents\Taller Poo Maicol Gutierrez\Local Prestamo Vehículos\Local Prestamo Vehículos\obj\Debug\net10.0\ref\Local Prestamo Vehículos.dll

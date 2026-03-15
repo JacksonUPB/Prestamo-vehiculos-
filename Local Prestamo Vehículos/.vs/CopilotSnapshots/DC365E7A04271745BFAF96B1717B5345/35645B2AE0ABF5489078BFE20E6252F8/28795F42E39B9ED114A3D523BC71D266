@@ -1,0 +1,240 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace PrestamoVehiculos
+{
+    public interface IPrestable
+    {
+        void Prestar();
+        void Devolver();
+    }
+
+    public abstract class Vehiculo : IPrestable
+    {
+        public string Placa { get; set; }
+        public string Marca { get; set; }
+        public int Modelo { get; set; }
+        public bool Disponible { get; set; }
+        public bool BuenEstado { get; set; }
+
+        public Vehiculo(string placa, string marca, int modelo, bool disponible, bool buenEstado)
+        {
+            Placa = placa;
+            Marca = marca;
+            Modelo = modelo;
+            Disponible = disponible;
+            BuenEstado = buenEstado;
+        }
+
+        public abstract void Prestar();
+        public abstract void Devolver();
+    }
+
+    public class Moto : Vehiculo
+    {
+        public int Cilindraje { get; set; }
+
+        public Moto(string placa, string marca, int modelo, bool disponible, int cilindraje, bool buenEstado)
+            : base(placa, marca, modelo, disponible, buenEstado)
+        {
+            Cilindraje = cilindraje;
+        }
+
+        public override void Prestar()
+        {
+            Disponible = false;
+            Console.WriteLine($"La moto {Placa} ha sido prestada.");
+        }
+
+        public override void Devolver()
+        {
+            Disponible = true;
+            Console.WriteLine($"La moto {Placa} ha sido devuelta.");
+        }
+    }
+
+    public class Carro : Vehiculo
+    {
+        public int Asientos { get; set; }
+
+        public Carro(string placa, string marca, int modelo, bool disponible, int asientos, bool buenEstado)
+            : base(placa, marca, modelo, disponible, buenEstado)
+        {
+            Asientos = asientos;
+        }
+
+        public override void Prestar()
+        {
+            Disponible = false;
+            Console.WriteLine($"El carro {Placa} ha sido prestado.");
+        }
+
+        public override void Devolver()
+        {
+            Disponible = true;
+            Console.WriteLine($"El carro {Placa} ha sido devuelto.");
+        }
+    }
+
+    public class Cliente
+    {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public bool TieneLicencia { get; set; }
+        public int Edad { get; set; }
+
+        public Cliente(int id, string nombre, bool tieneLicencia, int edad)
+        {
+            Id = id;
+            Nombre = nombre;
+            TieneLicencia = tieneLicencia;
+            Edad = edad;
+        }
+
+        public void SolicitarPrestamo()
+        {
+            Console.WriteLine($"El cliente {Nombre} solicita un préstamo.");
+        }
+
+        public void DevolverVehiculo()
+        {
+            Console.WriteLine($"El cliente {Nombre} devuelve el vehículo.");
+        }
+    }
+
+    // Aunque no diste los detalles de la clase Mecánico, es necesaria por el requerimiento de arreglo.
+    public class Mecanico
+    {
+        public string Nombre { get; set; }
+
+        public Mecanico(string nombre)
+        {
+            Nombre = nombre;
+        }
+
+        public void RepararVehiculo(Vehiculo vehiculo)
+        {
+            Console.WriteLine($"El mecánico {Nombre} está reparando el vehículo con placa {vehiculo.Placa}.");
+            vehiculo.BuenEstado = true; // El vehículo queda reparado
+        }
+    }
+
+    public class Prestamo
+    {
+        public DateTime FechaPrestamo { get; set; }
+        public DateTime? FechaDevolucion { get; set; }
+        public Cliente Cliente { get; set; }
+        public Vehiculo Vehiculo { get; set; }
+
+        public Prestamo(Cliente cliente, Vehiculo vehiculo, DateTime fechaPrestamo)
+        {
+            Cliente = cliente;
+            Vehiculo = vehiculo;
+            FechaPrestamo = fechaPrestamo;
+            FechaDevolucion = null;
+        }
+    }
+
+    public class Tienda
+    {
+        public bool Abierta { get; set; }
+        public List<Vehiculo> ListaVehiculos { get; set; } = new List<Vehiculo>();
+        public List<Mecanico> ListaMecanicos { get; set; } = new List<Mecanico>();
+        public List<Prestamo> ListaPrestamos { get; set; } = new List<Prestamo>();
+
+        public void PrestarVehiculo(Vehiculo vehiculo, Cliente cliente, DateTime fechaPrestamo)
+        {
+            // Validar la edad y licencia del cliente
+            if (cliente.Edad < 17 || !cliente.TieneLicencia)
+            {
+                Console.WriteLine($"[Rechazado] El cliente {cliente.Nombre} no cumple los requisitos (menor de 17 o falta de licencia).");
+                return;
+            }
+
+            // Validar si el vehículo está en mal estado y necesita reparación
+            if (!vehiculo.BuenEstado)
+            {
+                Console.WriteLine($"[Alerta] El vehículo {vehiculo.Placa} está en mal estado.");
+                if (ListaMecanicos.Any())
+                {
+                    Mecanico mecanicoAsignado = ListaMecanicos.First();
+                    mecanicoAsignado.RepararVehiculo(vehiculo);
+                }
+                else
+                {
+                    Console.WriteLine("No hay mecánicos disponibles para repararlo. No puede ser prestado.");
+                    return;
+                }
+            }
+
+            if (vehiculo.Disponible)
+            {
+                cliente.SolicitarPrestamo();
+                vehiculo.Prestar();
+                Prestamo nuevoPrestamo = new Prestamo(cliente, vehiculo, fechaPrestamo);
+                ListaPrestamos.Add(nuevoPrestamo);
+                Console.WriteLine($"[Completado] El préstamo del vehículo {vehiculo.Placa} al cliente {cliente.Nombre} fue exitoso.");
+            }
+            else
+            {
+                Console.WriteLine("El vehículo actualmente no está disponible.");
+            }
+        }
+
+        public void RecibirVehiculo(Cliente cliente, Vehiculo vehiculo, DateTime fechaDevolucion)
+        {
+            var prestamo = ListaPrestamos.FirstOrDefault(p => p.Vehiculo == vehiculo && p.Cliente == cliente && p.FechaDevolucion == null);
+            if (prestamo != null)
+            {
+                cliente.DevolverVehiculo();
+                vehiculo.Devolver();
+                prestamo.FechaDevolucion = fechaDevolucion;
+                Console.WriteLine($"[Completado] Vehículo {vehiculo.Placa} recibido exitosamente de {cliente.Nombre}.");
+            }
+            else
+            {
+                Console.WriteLine("No se encontró un préstamo activo con estos datos.");
+            }
+        }
+    }
+
+    /// <summary>
+    ///  Ejemplo base de las interfaces de usuario (UI) solicitadas.
+    ///  Aquí se deberían incluir los menú de crud (crear, modificar, listar, eliminar).
+    /// </summary>
+    public class UICliente
+    {
+        public void MostrarMenu(List<Cliente> clientes)
+        {
+            Console.WriteLine("-- Gestionar Clientes --");
+            // Aquí puedes implementar el Consola.ReadLine() y demás para el CRUD
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Configuramos una tienda de prueba
+            Tienda miTienda = new Tienda { Abierta = true };
+            miTienda.ListaMecanicos.Add(new Mecanico("Carlos")); // Añadimos un mecánico
+
+            // Usamos un vehículo que está inicialmente en MAL ESTADO
+            Carro carro = new Carro("XYZ-888", "Mazda", 2021, true, 4, false);
+            miTienda.ListaVehiculos.Add(carro);
+
+            Cliente clienteRechazado = new Cliente(1, "Ana", false, 16); // Sin licencia y menor
+            Cliente clienteValido = new Cliente(2, "Luis", true, 25);    // Con licencia y mayor
+
+            Console.WriteLine("--- Prueba 1: Cliente denegado ---");
+            miTienda.PrestarVehiculo(carro, clienteRechazado, DateTime.Now);
+
+            Console.WriteLine("\n--- Prueba 2: Cliente válido y vehículo requiere reparación ---");
+            miTienda.PrestarVehiculo(carro, clienteValido, DateTime.Now);
+
+            Console.WriteLine("\n--- Prueba 3: Devolviendo el vehículo ---");
+            miTienda.RecibirVehiculo(clienteValido, carro, DateTime.Now);
+        }
+    }
+}

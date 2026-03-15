@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Local Prestamo Vehículos/1.0.0": {
+        "runtime": {
+          "Local Prestamo Vehículos.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Local Prestamo Vehículos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
