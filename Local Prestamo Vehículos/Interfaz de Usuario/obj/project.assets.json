@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maico\\Documents\\Taller Poo Maicol Gutierrez\\Local Prestamo Vehículos\\Local Prestamo Vehículos\\Local Prestamo Vehículos.csproj",
-      "projectName": "Local Prestamo Vehículos",
-      "projectPath": "C:\\Users\\maico\\Documents\\Taller Poo Maicol Gutierrez\\Local Prestamo Vehículos\\Local Prestamo Vehículos\\Local Prestamo Vehículos.csproj",
+      "projectUniqueName": "C:\\Users\\maico\\Documents\\Taller Poo Maicol Gutierrez\\Local Prestamo Vehículos\\Interfaz de Usuario\\Interfaz de Usuario.csproj",
+      "projectName": "Interfaz de Usuario",
+      "projectPath": "C:\\Users\\maico\\Documents\\Taller Poo Maicol Gutierrez\\Local Prestamo Vehículos\\Interfaz de Usuario\\Interfaz de Usuario.csproj",
       "packagesPath": "C:\\Users\\maico\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maico\\Documents\\Taller Poo Maicol Gutierrez\\Local Prestamo Vehículos\\Local Prestamo Vehículos\\obj\\",
+      "outputPath": "C:\\Users\\maico\\Documents\\Taller Poo Maicol Gutierrez\\Local Prestamo Vehículos\\Interfaz de Usuario\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\maico\\AppData\\Roaming\\NuGet\\NuGet.Config",

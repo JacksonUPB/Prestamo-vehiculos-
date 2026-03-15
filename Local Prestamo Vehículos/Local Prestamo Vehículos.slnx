@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="Interfaz de Usuario/Interfaz de Usuario.csproj" />
   <Project Path="Local Prestamo Vehículos/Local Prestamo Vehículos.csproj" />
 </Solution>
